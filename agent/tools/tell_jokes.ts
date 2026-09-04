@@ -2,7 +2,7 @@ import { defineTool } from "eve/tools";
 import { z } from "zod";
 
 export default defineTool({
-  description: "Get the weather for a city",
+  description: "Tell a joke",
   inputSchema: z.object({}),
   async execute() {
     const res = await fetch(
