@@ -6,9 +6,9 @@ export default defineTool({
   inputSchema: z.object({}),
   async execute() {
     const res = await fetch(
-      `https://api.api-ninjas.com/v1/jokes`
+      "https://official-joke-api.appspot.com/jokes/programming/random"
     );
     const data = await res.json();
-    return data[0].joke;
+    return data[0].setup + "\n\n" + data[0].punchline;
   },
 });

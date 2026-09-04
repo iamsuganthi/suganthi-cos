@@ -1,6 +1,6 @@
 import { connect } from "@vercel/connect/eve";
 import { defineMcpClientConnection } from "eve/connections";
-const notionConnector = process.env.NOTION_CONNECTOR ?? "mcp.notion.com/suganthi-notion-cos";
+const notionConnector = process.env.NOTION_CONNECTOR ?? "notion/suganthi-cos";
 
 export default defineMcpClientConnection({
     url: "https://mcp.notion.com/mcp",
