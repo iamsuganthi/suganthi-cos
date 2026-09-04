@@ -92,7 +92,7 @@ export default defineSchedule({
 
     waitUntil(
       to(slack, { channelId }).send(
-        `Send a joke in this Slack conversation. Mention <@${userId}> so Suganthi is pinged.`,
+        `Use tell_jokes, then reply with only the joke and mention <@${userId}>. Your reply is posted to Slack automatically. Do not look for a Slack connection or try to send a message another way.`,
         { auth: appAuth },
       ),
     );
