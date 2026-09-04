@@ -92,7 +92,23 @@ export default defineSchedule({
 
     waitUntil(
       to(slack, { channelId }).send(
-        `Use tell_jokes, then reply with only the joke and mention <@${userId}>. Your reply is posted to Slack automatically. Do not look for a Slack connection or try to send a message another way.`,
+        [
+          `You are already in Suganthi's Slack DM. Your reply is posted to Slack automatically.`,
+          `Do not look for a Slack connection or try to send a message another way.`,
+          `Mention <@${userId}> once at the top.`,
+          ``,
+          `1. Use the Notion connection to find Suganthi's To Do List (search for Suganthi's private To Do List). Read open and incomplete items, including due dates and status when available.`,
+          `2. Use tell_jokes for one joke.`,
+          `3. Reply with one Slack-formatted message and nothing else:`,
+          ``,
+          `*To-do*`,
+          `Then group open items under short bold headings such as *Overdue*, *Today*, and *Upcoming*.`,
+          `Use a compact bullet list, one item per line. Put the due date after the title when you have one.`,
+          `Skip completed items. If there are no open items, say the list is clear.`,
+          ``,
+          `Then a divider, then *Joke*, then the joke.`,
+          `No preamble, no tool commentary.`,
+        ].join("\n"),
         { auth: appAuth },
       ),
     );

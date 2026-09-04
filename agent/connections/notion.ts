@@ -4,6 +4,10 @@ const notionConnector = process.env.NOTION_CONNECTOR ?? "mcp.notion.com/suganthi
 
 export default defineMcpClientConnection({
     url: "https://mcp.notion.com/mcp",
-    description: "Notion workspace: search, read, and edit pages and databases.",
-    auth: connect(notionConnector),
+    description:
+        "Notion workspace: search, read, and edit pages and databases, including to-do and task lists.",
+    auth: connect({
+        connector: notionConnector,
+        principalType: "app",
+    }),
 });
