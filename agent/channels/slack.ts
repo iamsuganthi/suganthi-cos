@@ -3,4 +3,5 @@ import { slackChannel } from "eve/channels/slack";
 
 export default slackChannel({
   credentials: connectSlackCredentials("slack/cos-suganthi"),
+  threadContext: { since: "thread-root" },
 });
