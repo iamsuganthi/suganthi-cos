@@ -2,6 +2,6 @@ import { connectSlackCredentials } from "@vercel/connect/eve";
 import { slackChannel } from "eve/channels/slack";
 
 export default slackChannel({
-  credentials: connectSlackCredentials("slack/cos-suganthi"),
+  credentials: connectSlackCredentials("slack/chief-of-staff"),
   threadContext: { since: "thread-root" },
 });
